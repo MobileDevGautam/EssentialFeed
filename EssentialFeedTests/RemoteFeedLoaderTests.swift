@@ -63,15 +63,22 @@ class RemoteFeedLoaderTests: XCTestCase {
         //        client.error = NSError(domain: "Test", code: 0) //Stubbed the client even though our client is spy
         
         //Act
-        var capturedErrors = [RemoteFeedLoader.Error]()
-        sut.load {
-            capturedErrors.append($0)
+        let samples = [199, 201, 300, 400, 500]
+        samples.enumerated().forEach { index, code in
+            
+            var capturedErrors = [RemoteFeedLoader.Error]()
+            sut.load {
+                capturedErrors.append($0)
+            }
+            
+            client.complete(withStatusCode: code, at: index)
+            
+            //Assert
+            XCTAssertEqual(capturedErrors, [.invalidData])
+            
+            capturedErrors = []
         }
         
-        client.complete(withStatusCode: 400)
-        
-        //Assert
-        XCTAssertEqual(capturedErrors, [.invalidData])
     }
     
     //MARK: Helpers
