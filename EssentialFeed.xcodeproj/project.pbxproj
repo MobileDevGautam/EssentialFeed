@@ -116,7 +116,6 @@
 			children = (
 				154B3EA028F707E500123405 /* FeedItem.swift */,
 				154B3EA228F7083E00123405 /* FeedLoader.swift */,
-				15398B5C293CD8B4000B6E4C /* URLSessionHTTPClient.swift */,
 			);
 			path = FeedFeature;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 				154B3EAA28F9AA9A00123405 /* RemoteFeedLoader.swift */,
 				154B3EAE2908083400123405 /* FeedItemsMapper.swift */,
 				154B3EAC2908061100123405 /* HTTPClient.swift */,
+				15398B5C293CD8B4000B6E4C /* URLSessionHTTPClient.swift */,
 			);
 			path = FeedApi;
 			sourceTree = "<group>";
