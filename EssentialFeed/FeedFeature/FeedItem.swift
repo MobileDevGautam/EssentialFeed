@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Feed Model
 public struct FeedItem: Equatable {
     public let id: UUID
     public let description: String?
